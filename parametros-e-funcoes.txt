@@ -1,0 +1,49 @@
+var anos = 0 // variavel global
+fun main(){
+    //chamada de funções sem "return"
+    darBoasVindas()
+    //parametros nomeados podem ser selecionados no padrão desejado ex: dizNomeIdade(idade = 50, nome = "Madruga",)
+    dizNomeIdade("Madruga", 50)
+    dizNomeIdade("florinda", 30)
+    dizNomeIdade("clotilde", 20)
+    
+ 	    //chamada de funções com return
+        println("Área do trapézio: ${areaDoTrapezio(2.2, 3.3, 4.4)} m²")
+            
+            //usando parametros nomeados
+            println( areaDoTrapezio(h = 2.2, b = 3.3, a = 4.4) )
+            println( areaDoTrapezio(b = 3.3, a = 4.4) )
+			
+    		println("Área do circulo: ${areaDoCirculo(1.5)} m²")
+}
+
+//função sem parametro e sem retorno
+fun darBoasVindas(){
+    println("Fala meu querido!")
+}
+
+//funçao com parametros e sem retorno
+fun dizNomeIdade(nome : String, idade : Int) {
+ println("Olá $nome! sua idade e de $idade anos.")
+ anos = idade
+    aniversario()
+}
+
+fun aniversario(){
+    anos++ // Soma 1
+    println("Parabéns! agora você tem $anos anos.")
+}
+//função com parametros e retorno
+fun areaDoTrapezio(
+	
+    a : Double,
+    b : Double,
+    h : Double = 1.0
+) : Double {
+    val result = ((a+b)*h)/2
+    return result
+}
+
+fun areaDoCirculo(raio : Double) : Double {
+    return Math.PI * (raio * raio)
+}
